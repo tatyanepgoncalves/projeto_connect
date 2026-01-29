@@ -1,0 +1,78 @@
+@use "../../styles/variables.scss" as v;
+
+.Header {
+  background-color: v.$primary-color;
+  border-bottom: 1px solid #eee;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.HeaderContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+
+  width: 100%;
+  max-width: 80rem;
+
+  position: relative;
+}
+
+.Logo {
+  img {
+    width: 3.5rem;
+  }
+}
+
+.btnsAction {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.menuBtn {
+  display: flex;
+  align-items: center;
+  background-color: transparent;
+  border: none;
+  z-index: 1001;
+  color: v.$bg-color;
+
+  @media (width >= 64rem) {
+    display: none;
+  }
+}
+
+.overlay {
+  position: absolute;
+  top: 0; 
+  right: -100%;
+  width: 100%;
+  height: 100vh;
+  background: v.$primary-color;
+  z-index: 1000;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: right 0.2000ms ease-in-out;
+  list-style:  none;
+
+  &.open {
+    right: 0;
+  }
+  
+  @media (width >= 64rem) {
+    display: none; // Garante que suma se a tela aumentar
+  }
+}
+
+.Avatar {
+  img {
+    border: 5px solid v.$border;
+    height: 3.75rem;
+    height: 3.75rem;
+    object-fit: cover;
+    border-radius: 100%;
+  }
+}
