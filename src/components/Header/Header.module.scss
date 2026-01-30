@@ -27,6 +27,43 @@
   }
 }
 
+.navbarDesktop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 600px;
+  width: 100%;
+
+  @media (width <= 64rem) {
+    display: none;
+  }
+
+}
+
+.link {
+  padding: 0.5rem 1rem;
+  color: v.$bg-color;
+  font-size: 1.125rem; /* 18px */
+  line-height: 1.75rem; /* 28px */
+  transition: all 600ms;
+
+  &:hover {
+    border-bottom: 2px solid v.$neutral-100;
+    color: v.$neutral-100;
+    letter-spacing: 0.05em;
+  }
+}
+
+.linkActive {
+  border-bottom: 1px solid v.$bg-color;
+  color: v.$bg-color;
+  letter-spacing: 0.05em;
+}
+
+.linkDefault {
+  color: v.$neutral-200;
+}
+
 .btnsAction {
   display: flex;
   align-items: center;

@@ -3,29 +3,33 @@ import useMenu from '../../hooks/useMenu'
 import m from './MenuMobile.module.scss'
 
 const navLinks = [
-  { label: "Início", path: "/" },
-  { label: "Doação", path: "/doacao" },
-  { label: "Voluntariado", path: "/voluntariado" },
-  { label: "Mentoria", path: "/mentoria" },
-  { label: "Eventos & Palestras", path: "/eventos-e-palestras" },
+  { label: 'Início', path: '/' },
+  { label: 'Doação', path: '/doacao' },
+  { label: 'Voluntariado', path: '/voluntariado' },
+  { label: 'Mentoria', path: '/mentoria' },
+  { label: 'Eventos', path: '/eventos-e-palestras' },
 ]
 
 export default function MenuMobile() {
   const { toggleMenu, isMenuOpen } = useMenu()
   const location = useLocation()
-  
 
   return (
+    // biome-ignore lint/a11y/noNoninteractiveElementInteractions: it isn't necessary
+    // biome-ignore lint/a11y/useKeyWithClickEvents: it isn't necessary
     <nav
-      aria-label={isMenuOpen ? 'Abrir menu' : 'Fechar menu'}
       className={`${m.navBar} ${isMenuOpen ? m.menuActive : ''}`}
       onClick={toggleMenu}
     >
       {navLinks.map((item) => {
-        const isActive = location.pathname  === item.path
+        const isActive = location.pathname === item.path
 
         return (
-        <Link key={item.label} to={item.path} className={ `${isActive ? m.linkActive : m.link}`}>
+          <Link
+            className={`${isActive ? m.linkActive : m.link}`}
+            key={item.label}
+            to={item.path}
+          >
             {item.label}
           </Link>
         )
