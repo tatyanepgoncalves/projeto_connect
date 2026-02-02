@@ -1,0 +1,108 @@
+@use "../../styles/variables.scss" as v;
+
+.dropdownContainer {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdownTrigger {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 6px 16px 6px 6px;
+  border: 1px solid v.$border-color;
+  transition: all 0.2s ease;
+  background: v.$bg-color;
+  border-radius: 40px;
+
+  &:hover, &.active {
+    background: v.$primary-blue;
+    background: #f0f7ff;
+  }
+
+  img {
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+  span {
+    font-weight: 500;
+    font-size: 0.9rem;
+
+    @media (width < 480px) {
+      display: none;
+    }
+  }
+}
+
+.dropdownMenu {
+  .mobileOnlyLink {
+    display: none;
+
+    @media (width  <= 64rem) {
+      display: flex; // Visible on Tablets and Phones
+      gap: 1rem;
+    }
+
+    a {
+      font-weight: 600;
+      color: v.$primary-color; // Give them a slight accent to distinguish from settings
+    }
+  }
+}
+
+.dropdownMenu {
+  position: absolute;
+  top: calc(100% + 8px);
+  right: 0;
+  width: 220px;
+  background: v.$bg-color;
+  border-radius: 8px;
+  box-shadow: v.$shadow;
+  border: 1px solid v.$border-color;
+  padding: 8px;
+  margin: 0;
+  z-index: 10;
+
+  @media (width <= 480px) {
+    position: fixed;
+    top: 70px;
+    bottom: 20px;
+    right: 30px;
+    width: fit-content;
+    height: fit-content;
+  }
+
+  a {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 10px 16px;
+    color: #444;
+    font-size: 0.85rem;
+
+
+    &:hover {
+      background-color: #f0f7ff;
+      color: v.$primary-color;
+    }
+  }
+
+}
+
+.divider {
+  height: 1px;
+  background: #eee;
+  margin: 4px 0;
+}
+
+.scaleInCenter {
+  animation: scale-in-center 0.2s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+@keyframes scale-in-center {
+  0% { transform: scale(0.9); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}

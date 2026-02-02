@@ -1,25 +1,29 @@
-import { Menu, X } from 'lucide-react'
+import {
+  CalendarHeart,
+  GraduationCap,
+  HandHeart,
+  Home,
+  HouseHeart,
+} from 'lucide-react'
 import { Link, useLocation } from 'react-router-dom'
-import useMenu from '../../hooks/useMenu'
 import Logo from '../../images/logo.png'
-import MenuMobile from '../MenuMobile/MenuMobile'
+import { DropdownAvatar } from '../DropdownAvatar/DropdownAvatar'
 import h from './Header.module.scss'
 
 const navLinks = [
-  { label: 'Início', path: '/' },
-  { label: 'Doação', path: '/doacao' },
-  { label: 'Voluntariado', path: '/voluntariado' },
-  { label: 'Mentoria', path: '/mentoria' },
-  { label: 'Eventos', path: '/eventos-e-palestras' },
+  { icon: Home, label: 'Início', path: '/' },
+  { icon: HandHeart, label: 'Doação', path: '/doacao' },
+  { icon: HouseHeart, label: 'Voluntariado', path: '/voluntariado' },
+  { icon: GraduationCap, label: 'Mentoria', path: '/mentoria' },
+  { icon: CalendarHeart, label: 'Eventos', path: '/eventos-e-palestras' },
 ]
 
 export default function Header() {
-  const { toggleMenu, isMenuOpen } = useMenu()
   const location = useLocation()
 
   return (
-    <header className={h.Header}>
-      <div className={h.HeaderContainer}>
+    <header className={h.header}>
+      <div className={h.headerContainer}>
         <Link className={h.Logo} to="/">
           {/** biome-ignore lint/correctness/useImageSize: it isn't necessary */}
           <img alt="Logo da página Connect de voluntários." src={Logo} />
@@ -34,32 +38,15 @@ export default function Header() {
                 className={`${h.link} ${isActive ? h.linkActive : h.linkDefault}`}
                 key={item.path}
                 to={item.path}
-              >
+              > 
+                <item.icon size={18} />
                 {item.label}
               </Link>
             )
           })}
         </nav>
 
-        <section className={h.btnsAction}>
-          {isMenuOpen && (
-            <div className={`${h.overlay} ${isMenuOpen ? h.open : ''}`}>
-              <MenuMobile />
-            </div>
-          )}
-
-          <section className={h.Avatar}>
-            {/** biome-ignore lint/correctness/useImageSize: it ins't necessary */}
-            <img
-              alt="Avatar de Tatyane Gonçalves"
-              src="https://avatars.githubusercontent.com/u/158174190?v=4"
-            />
-          </section>
-
-          <button className={h.menuBtn} onClick={toggleMenu} type="button">
-            {isMenuOpen ? <X /> : <Menu />}
-          </button>
-        </section>
+        <DropdownAvatar />
       </div>
     </header>
   )
