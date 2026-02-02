@@ -1,0 +1,32 @@
+@use '../../styles/variables.scss' as v;
+
+.footer, .footerContainer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.footer {
+  padding: 20px 0;
+  background-color: v.$neutral-100;
+  width: 100%;
+
+  @media (width <= 768px) {
+    padding: 15px 10px; // More horizontal padding on mobile
+  }
+}
+
+.footerContainer {
+  width: 100%;
+  max-width: 80rem;
+  padding: 24px;
+  text-align: center;
+
+  p {
+    margin: 0;
+    font-size: clamp(0.7rem, 2vw, 0.85rem); 
+    text-align: center;
+    line-height: 1.5; 
+    color: v.$text-footer;
+  }
+}
