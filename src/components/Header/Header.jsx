@@ -8,6 +8,7 @@ import {
 import { Link, useLocation } from 'react-router-dom'
 import Logo from '../../images/logo.png'
 import { DropdownAvatar } from '../DropdownAvatar/DropdownAvatar'
+import DropdownMobile from '../DropdownMobile/DropdownMobile'
 import h from './Header.module.scss'
 
 const navLinks = [
@@ -38,7 +39,7 @@ export default function Header() {
                 className={`${h.link} ${isActive ? h.linkActive : h.linkDefault}`}
                 key={item.path}
                 to={item.path}
-              > 
+              >
                 <item.icon size={18} />
                 {item.label}
               </Link>
@@ -47,6 +48,7 @@ export default function Header() {
         </nav>
 
         <DropdownAvatar />
+        <DropdownMobile />
       </div>
     </header>
   )

@@ -10,7 +10,7 @@
 .HomePageContainer {
   max-width: 80rem;
   width: 100%;
-  padding: 24px;
+  padding: 0 24px;
 
   display: flex;
   flex-direction: column;
@@ -21,6 +21,7 @@
   @media (width >= 64rem) {
     justify-content: space-between;
     flex-direction: row;
+    height: 573px;
   }
 }
 
@@ -39,7 +40,7 @@
 }
 
 .elements {
-  gap: 1.25rem;
+  gap: 1rem;
 }
 
 .HomeLeft {
@@ -129,8 +130,8 @@
 
 
   @media (width >= 48rem) {
-    width: 45%;
-    max-width: 80%;
+    width: 100%;
+    max-width: 450px;
   }
 
   img {

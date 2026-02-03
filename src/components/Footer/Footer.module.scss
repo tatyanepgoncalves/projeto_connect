@@ -7,20 +7,23 @@
 }
 
 .footer {
-  padding: 20px 0;
+  padding: 10px 0;
   background-color: v.$neutral-100;
   width: 100%;
 
   @media (width <= 768px) {
-    padding: 15px 10px; // More horizontal padding on mobile
+    padding: 10px 0; 
   }
 }
 
 .footerContainer {
   width: 100%;
-  max-width: 80rem;
-  padding: 24px;
+  max-width: 20rem;
   text-align: center;
+
+  @media (width >= 768px) {
+    max-width: 80vw;
+  }
 
   p {
     margin: 0;
