@@ -1,0 +1,112 @@
+@use "../../styles/variables.scss" as v;
+
+.events, .eventsContainer {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.eventsContainer {
+  flex-direction: column;
+  max-width: 80rem;
+
+
+  height: fit-content;
+  justify-content: space-evenly;
+  padding: 24px;
+  max-width: 80rem;
+  gap: 2rem;
+
+  @media (width >= 64rem) {
+    height: 72.5vh;
+  }
+
+  @media (width >= 1600px) {
+    height: 80vh;
+  }
+}
+
+.eventsContainer {
+  h1 {
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+    color: v.$primary-color;
+    
+    @media (width >= 64rem) {
+      font-size: 3rem;
+      line-height: 1;
+    }
+  }
+}
+
+.eventsGroup {
+  display: grid;
+  place-content: center;
+  gap: 2rem;
+
+
+  @media (width >= 64rem) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.eventsItem {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 100%;
+  gap: 1rem;
+
+  @media (width >= 48rem) {
+    width: 350px;
+  }
+
+  @media (width >= 64rem) {
+    width: 100%;
+    max-width: 450px;
+  }
+}
+
+.id {
+  
+  h2 {
+    margin-bottom: 0.5rem;
+    font-size: 1.25rem;
+    line-height: 1.75rem; 
+    color: v.$primary-color;
+  }
+}
+
+.paragraph {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+
+  p {
+    font-size: 0.875rem; 
+    line-height: 1.25rem; 
+    color: v.$text-footer;
+  }
+}
+
+.btnEvent {
+  background-color: v.$primary-color;
+  border: none;
+  color: v.$neutral-50;
+  padding: 8px 12px;
+  border-radius: 8px;
+  width: fit-content;
+  transition: all 0.4s ease;
+
+  &:hover {
+    border: 1px solid v.$primary-color;
+    box-shadow: v.$shadow;
+    background-color: transparent;
+    color: v.$primary-color;
+    scale: 1.1;
+  }
+}
