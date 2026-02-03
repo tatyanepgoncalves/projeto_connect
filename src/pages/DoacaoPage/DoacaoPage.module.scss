@@ -1,0 +1,82 @@
+@use "../../styles/variables.scss" as v;
+
+.doacaoPage, .DoacaoPageContainer {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.DoacaoPageContainer {
+  height: fit-content;
+  
+  @media (width >= 64rem) {
+    height: 573px;
+  }
+
+}
+
+.DoacaoPageContainer {
+  gap: 3rem;
+  flex-direction: column;
+  padding: 24px;
+
+  h1 {
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+    color: v.$primary-color;
+    
+    @media (width >= 64rem) {
+      font-size: 3rem;
+      line-height: 1;
+    }
+  }
+
+}
+
+.DoacaoPageContainer {
+  @media (width >= 64rem) {
+    max-width: 80rem;
+  }
+
+}
+
+.doacaoGroup {
+  display: grid;
+  place-content: center;
+  gap: 2rem;
+
+  @media (width >= 64rem) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.doarItem {
+  text-align: center;
+  width: 250px;
+
+  img {
+    width: 100%;
+  }
+
+  h2 {
+    font-size: 1.25rem;
+    line-height: 1.75rem; 
+    color: v.$primary-color;
+  }
+
+  p {
+    font-size: 0.875rem; 
+    line-height: 1.25rem; 
+    color: v.$text-footer;
+  }
+
+  @media (width >= 48rem) {
+    width: 350px;
+  }
+
+  @media (width >= 64rem) {
+    width: 100%;
+    max-width: 450px;
+  }
+}

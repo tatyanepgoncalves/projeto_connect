@@ -1,0 +1,140 @@
+@use '../../styles/variables.scss' as v;
+
+.home {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+
+.HomePageContainer {
+  max-width: 80rem;
+  width: 100%;
+  padding: 0 24px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+  
+  @media (width >= 64rem) {
+    justify-content: space-between;
+    flex-direction: row;
+    height: 573px;
+  }
+}
+
+.HomeLeft, 
+.elements {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+
+  @media (width >= 64rem)  {
+    text-align: left;
+    align-items: start;
+  }
+}
+
+.elements {
+  gap: 1rem;
+}
+
+.HomeLeft {
+  width: 100%;
+  max-width: 700px;
+  gap: 3rem;
+
+  @media (width >= 64rem) {
+    max-width: 450px;
+  }
+}
+
+.text {
+  h1 {
+    font-size: 2.25rem; 
+    line-height: 2.5rem;
+    color: v.$primary-color;
+    
+
+    @media (width >=  64rem) {
+      font-size: 3rem; 
+      line-height: 1;
+    }
+  }
+
+  p {
+    font-size: 0.875rem; 
+    line-height: 1.25rem; 
+    color: v.$primary-color;
+  }
+}
+
+.BtnHome {
+  background-color: v.$secondary-color;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 1rem;
+  font-family: v.$font-source;
+  color: v.$neutral-50;
+  font-weight: 600;
+  transition: all 0.4s ease;
+
+  &:hover {
+    scale: 1.05;
+    box-shadow: 0 0 5px rgba(253, 114, 104, 0.5);
+  }
+}
+
+.statsContainer {
+  display: grid;
+  gap: 2rem;
+
+  @media (width >= 48rem) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+} 
+
+.stats {
+
+  h2 {
+    color: v.$primary-color;
+    font-size: 1.5rem;
+    line-height: 2rem; 
+
+    @media (width >= 48rem) {
+      font-size: 1.875rem;
+      line-height: 2.25rem; 
+    }
+
+  }
+
+  p {
+    font-size: 1rem; 
+    line-height: 1.5rem; 
+    color: v.$primary-color;
+  }
+
+
+}
+
+.imageHome {
+  width: 100%;
+  max-width: 100%;
+
+
+  @media (width >= 48rem) {
+    width: 100%;
+    max-width: 450px;
+  }
+
+  img {
+    width: 100%;
+  }
+}

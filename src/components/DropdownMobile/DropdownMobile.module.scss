@@ -1,11 +1,11 @@
 @use "../../styles/variables.scss" as v;
 
-.dropdownContainer {
+.dropdownContainerMobile {
   position: relative;
-  display: none;
+  display: inline-block;
 
   @media (width >= 1024px) {
-    display: inline-block;
+    display: none;
   }
 }
 
@@ -13,7 +13,7 @@
   display: flex;
   align-items: center;
   gap: 10px;
-  padding: 6px 16px 6px 6px;
+  padding: 8px 16px ;
   border: none;
   transition: all 0.2s ease;
   background: transparent;
@@ -22,6 +22,7 @@
 
   &:hover, &.active {
     box-shadow: v.$shadow;
+
   }
 
   img {
@@ -34,6 +35,7 @@
   span {
     font-weight: 500;
     font-size: 0.9rem;
+    
 
     @media (width < 480px) {
       display: none;
@@ -41,6 +43,21 @@
   }
 }
 
+.dropdownMenu {
+  .mobileOnlyLink {
+    display: none;
+
+    @media (width  <= 64rem) {
+      display: flex; 
+      gap: 1rem;
+    }
+
+    a {
+      font-weight: 600;
+      color: v.$primary-color; 
+    }
+  }
+}
 
 .dropdownMenu {
   position: absolute;
@@ -57,16 +74,24 @@
   flex-direction: column;
   gap: 0.5rem;
 
+  @media (width <= 480px) {
+    position: fixed;
+    top: 70px;
+    bottom: 20px;
+    right: 30px;
+    width: fit-content;
+    height: fit-content;
+  }
+  
 }
 
-.link {
+.mobileOnlyLink {
   display: flex;
   align-items: center;
-  gap: 1rem;
   color: v.$neutral-100;
+  font-size: 0.85rem;
   padding: 10px 1rem;
   border-radius: 0.5rem;
-  font-size: 0.85rem;
 
   &:hover {
     background-color: #f0f7ff;
@@ -74,13 +99,21 @@
   }
 }
 
-
 .linkActive {
   background-color: #f0f7ff;
-  color: v.$primary-color;
+  color: #000;
 }
 
 
+.divider {
+  height: 1px;
+  background: #eee;
+  margin: 4px 0;
+
+  @media (width >= 1025px) {
+    display: none;
+  }
+}
 
 .scaleInCenter {
   animation: scale-in-center 0.2s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
@@ -89,4 +122,10 @@
 @keyframes scale-in-center {
   0% { transform: scale(0.9); opacity: 0; }
   100% { transform: scale(1); opacity: 1; }
+}
+
+.mobileOnlyLinkMobile {
+  @media (width >= 1025px) {
+    display: none;
+  }
 }
