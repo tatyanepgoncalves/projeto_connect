@@ -18,13 +18,6 @@ O projeto utiliza o que há de mais moderno no ecossistema React para performanc
 
 ## 🎨 Funcionalidades
 
-- [x] Design responsivo (adaptável a diferentes tamanhos de tela).
-- [x] Interface intuitiva e moderna.
-- [x] Navegação fluida entre seções.
-- [x] Integração de elementos visuais atraentes.
-
-- [x]
-
 - [x] **Design Responsivo**: Adaptado para dispositivos mobile, tablets e desktops.
 - [x] **Componentização**: Arquitetura de código limpa e reutilizável.
 - [x] **Interatividade**: Navegação fluida e elementos visuais modernos.
