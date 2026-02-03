@@ -1,5 +1,5 @@
 import Acompanhamento from '../../images/acompanhamento.png'
-import CompartilheExperiencia from '../../images/carreira-primeiro-emprego.png'
+import CompartilheExperiencia from '../../images/compartilhe-experiencia.png'
 import MentoriaCarreira from '../../images/mentoria-carreira-emprego.png'
 import m from './MentoriaPage.module.scss'
 
